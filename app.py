@@ -63,8 +63,8 @@ def temp_monthly():
     tempobs = session.query(Measurement.tobs).\
         filter(Measurement.station == 'USC00519281').\
         filter(Measurement.date >= lastyear).all()
-        monthtemp = list(np.ravel(tempobs))
-        return jsonify(monthtemp)
+    monthtemp = list(np.ravel(tempobs))
+    return jsonify(monthtemp)
 
 
 @app.route("/api/v1.0/temp/<start>")
